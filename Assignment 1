@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include<string.h>
+#include<stdlib.h>
+struct book{
+    char name[20];
+    int no;
+};
+
+int main()
+{
+    struct book s[20];int c=0,nu;int ex;  
+    printf("Enter the number of books you want to record: \n");
+    scanf("%d",&nu);
+    printf("enter the data :\n");
+    
+    for(int i=0;i<nu;i++){
+        printf("enter the book name  :");
+        scanf("%s",s[i].name);
+        printf("enter the book number :");
+       scanf("%d",&s[i].no);
+       c++;
+       
+    }
+  
+    
+    
+    do{
+    printf("do want\n 1)insert\n2)delete\n3)modify\n4)display");
+    int ch;
+    scanf("%d",&ch);
+    
+    switch(ch){
+        
+    case 1:
+    
+    printf("enter position u want to insert :\n  ");
+    int n;
+    scanf("%d",&n);
+    for(int i=c-1;i>=n;i--){
+       // strcpy(s[i+1].name,s[i].name);
+       // s[i+1].no=s[i].no;
+        s[i+1]=s[i];
+    }
+    printf("enter the book name  :\n");
+        scanf("%s",s[n].name);
+        printf("enter the book numbere :\n");
+       scanf("%d",&s[n].no);
+       c++;
+    printf("display the data :\n");
+    for(int i=0;i<c;i++){
+        printf("%d\n",i);
+        printf("book name  %s\n",s[i].name);
+        
+        printf("book numbere  %d\n",s[i].no);
+      
+    }
+    
+    break;
+    case 2:
+    // for deleting
+    printf("enter position u want do delete \n");
+    int d;
+    scanf("%d",&d);
+     for(int i=d;i<=c;i++){
+      //  strcpy(s[i].name,s[i+1].name);
+       //s[i].no=s[i+1].no;
+        s[i]=s[i+1];
+    }
+    c--;
+    printf("after modify data the data");
+    for(int i=0;i<c;i++){
+        printf("%d\n",i);
+        printf("book name  %s\n",s[i].name);
+        
+        printf("book number  %d\n",s[i].no);
+      
+    }
+    break;
+    case 3:
+    printf("enter position u want modify :\n");
+    int m;
+    scanf("%d",&m);
+    printf("enter book name :\n");
+    scanf("%s",s[m].name);
+    printf("enter the book number \n");
+    scanf("%d",&s[m].no);
+    break;
+     case 4:
+    for(int i=0;i<c;i++)
+    {
+          printf("book name  %s\n",s[i].name);
+        
+        printf("book number  %d\n",s[i].no);
+    }
+    break;
+    }
+   
+    printf("enter 0 to exit\n");
+  scanf("%d",&ex);
+}while(ex!=0);
+
+
+    return 0;
+}
