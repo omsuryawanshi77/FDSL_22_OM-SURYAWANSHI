@@ -40,7 +40,7 @@ int main() {
     int max = size - 1;
 
     // Perform binary search
-    for (int i = 0; min <= max; i++) {
+     while(min <= max) {
         int mid = (min + max) / 2; // Calculate the middle index
 
         // Check if the search element is greater than the middle element
