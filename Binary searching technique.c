@@ -1,18 +1,5 @@
 #include <stdio.h>
 
-// Function to sort an array using a modified bubble sort
-void sorting(int a[], int size) {
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = i; j < size - 1; j++) {
-            if (a[i] > a[j + 1]) {
-                // Swap elements
-                int temp = a[i];
-                a[i] = a[j + 1];
-                a[j + 1] = temp;
-            }
-        }
-    }
-}
 
 int main() {
     int size = 12, s, count = 0; 
@@ -26,10 +13,7 @@ int main() {
     printf("Enter the array elements:\n");
     for (int i = 0; i < size; i++) {
         scanf("%d", &a[i]);
-    }
-
-    // Sort the array
-    sorting(a, size);
+    }
 
     // Get the element to search for from the user
     printf("Enter the element you want to search:\n");
