@@ -1,0 +1,33 @@
+#include<stdio.h>
+#define max 10
+/*int sp=-1;
+void push(int a){
+    sp++;
+    stack[sp]=a;
+}*/
+/*int pop(){
+    return stack[sp--];
+}*/
+int main(){
+    
+    int sp=-1;
+int stack[14];
+    int n;
+    printf("enter the number");
+    scanf("%d",&n);
+    if(n==0) printf("%d binary no. === 0",n);
+    else{
+    int temp=n;
+    while(temp!=0){
+        //push(temp%2);
+        stack[++sp]=temp%2;
+        temp/=2;
+    }
+   printf("%d binary no. ===",n);
+    
+    while(sp>=0){
+        printf(" %d ",stack[sp--]);
+        
+    }
+    }
+}
